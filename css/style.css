@@ -143,6 +143,9 @@ a:active {
     body{
         margin-top: 11.4em;
     }
+    #franquias figure {
+        width: 60%;
+    }
 }
 
 
