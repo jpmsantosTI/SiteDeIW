@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #1976d2;
+    color: white;
+}
+header {
+    background-color:  #bdd0de;
+    border: solid rgb(34, 38, 52);
+    border-width: 0.5em 0.9em 0.5em 0.9em;
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    padding: 1% 0;
+    top: 0;
+    z-index: 1000;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    left: 0px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+nav ul li {
+    margin: 0 1em;
+    flex: 1 1 auto;
+    font-size: 1.2em;
+    max-width: 121px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    background-color:  #a6c1d4;
+    padding: 7px 3% 7px 3%;
+    flex: 1 1 auto;
+    border-radius: 5px;
+    max-width: 121px;
+}
+nav a:hover {
+    color: #413d3d;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-style: solid;
+    border-color: rgb(34, 38, 52);
+    transition-delay: 0s;
+    font-size: 1.2em;
+    box-shadow: 0 0 5px rgb(34, 38, 52);
+}
+nav a:active {
+    color: #413d3d;
+    border-width: 0.1em 0.1em 0.1em 0.1em;
+    border-style: solid;
+    border-color: rgb(34, 38, 52);
+}
+.logo {
+    left: 0px;
+    width: 10%;
+    height: auto;
+}
+.logo img {
+    width: 90%;
+    height: auto;
+}
+.banner {
+    background:url(../img/bannernovo.png) no-repeat center center/cover;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.titulo {
+    z-index: 2 !important;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+}
+.banner::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.468);
+    box-shadow: #413d3d 0px 0px 5px;
+}
+
+
+
+
+/*Abaixa o banner para ele não ser escondido*/
+@media (min-width: 2168px) {
+    .banner {
+        margin-top: 9em;
+    }
+}
+@media (min-width: 1527.5px) and (max-width: 2168px) {
+    .banner {
+        margin-top: 7.4em;
+    }
+}
+@media (min-width: 952px) and (max-width: 1527.5px) {
+    .banner {
+        margin-top: 5em;
+        height: 30vh;
+    }
+    .banner::after {
+        height: 30%;
+    }
+}
+@media (min-width: 843px) and (max-width: 952px) {
+    .banner {
+        margin-top: 4em;
+        height: 20vh;
+    }
+    .banner::after {
+        height: 20%;
+    }
+}
+@media (min-width: 713px) and (max-width: 843px) {
+    .banner {
+        margin-top: 12em;
+        height: 20vh;
+    }
+    .banner::after {
+        height: 20%;
+    }
+}
+@media (min-width: 0px) and (max-width: 713px) {
+    .banner {
+        margin-top: 10em;
+        height: 15vh;
+    }
+    .banner::after {
+        height: 15%;
+    }
+}
+/*---------------------------------*/
+
+
+
+
+
+
+
+/*melhora a responsividade da pagina abaixando o banner*/
+@media (max-width: 843.4px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    nav ul {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    nav ul li {
+        flex: 1 1 auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 0.9em;
+    }
+    nav ul li a {
+        padding: 0%; 
+        background-color: #bdd0de;    
+    }
+    nav ul li a:hover, nav ul li a:active {
+        background-color: #bdd0de;
+        color: #413d3d;
+        border-width: 0;
+        box-shadow: 0 0 0px rgb(34, 38, 52)
+    }
+    main figure {
+        width: 80% !important;
+        height: auto !important;
+    }
+}
+
+/*Fonte boldonse*/
+h1, .boldonse {
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*Fonte oswald*/
+h2, h3, p, ul, ol, li, footer, .oswald {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 550;
+    font-style: normal;
+}
+h1 {
+    margin-left: 25px;
+    margin-top: 1%;
+}
+h2 {
+    margin-left: 15px;
+    margin-top: 3%;
+}
+h3 {
+    margin-left: 10px;
+    margin-top: 2%;
+}
+p {
+    margin-left: 6px;
+    margin-right: 10px;
+    margin-top: 2%;
+    font-size: 1.1em;
+    text-align: justify;
+}
+footer{
+    font-weight: 400;
+    background-color: rgb(0, 0, 0);
+    padding: 2vmax;
+    font-weight: 300;
+    text-align: center;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+}
+#mascote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    text-align: justify;
+}
+.rayman {
+    height: auto;
+    width: 30vw;
+    margin-top: 15px;
+}
+@media screen and (max-width: 863px) {
+    .rayman {
+        width: 50vw;
+    }
+    
+}
+.raymandiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    text-align: justify;
+}
+#franquias li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 1.6em;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#franquias figure{
+    width: 40%;
+    height: auto;
+}
+#franquias img {
+    width: 100%;
+    height: auto;
+}
+ .fonte {
+    color: #b9b9b9;
+    text-decoration: none;
+    font-size: 0.8em;
+    font-weight: 300;
+    font-style: normal;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    text-align: center;
+}
+.fonte :hover, .fonte :active {
+    color: #19f3ef;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+.titulo {
+    font-size: 3vw;
+    font-weight: 400;
+    font-style: normal;
+}
