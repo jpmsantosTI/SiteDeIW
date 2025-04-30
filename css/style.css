@@ -102,10 +102,55 @@ nav a:active {
     background: rgba(0, 0, 0, 0.468);
     box-shadow: #413d3d 0px 0px 5px;
 }
+#sobre{
+    padding-left: 35px;
+}
 
-
-
-
+.sobre-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto;
+}
+.sobre-texto {
+    flex: 1;
+    padding: 20px;
+}
+.sobre-texto h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.sobre-texto h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.sobre-texto p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: justify;
+    margin-top: 10px;
+}
+.hex-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    gap: 15px;
+}
+.hex{
+    width: 140px;
+    height: 120px;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    overflow: hidden;
+    position: relative;
+}
+.hex img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /*Abaixa o banner para ele não ser escondido*/
 @media (min-width: 2168px) {
     .banner {
@@ -144,7 +189,7 @@ nav a:active {
         height: 20%;
     }
 }
-@media (min-width: 0px) and (max-width: 713px) {
+@media (max-width: 713px) {
     .banner {
         margin-top: 10em;
         height: 15vh;
@@ -152,6 +197,7 @@ nav a:active {
     .banner::after {
         height: 15%;
     }
+
 }
 /*---------------------------------*/
 
@@ -163,7 +209,7 @@ nav a:active {
 
 /*melhora a responsividade da pagina abaixando o banner*/
 @media (max-width: 843.4px) {
-    header .container {
+    header .container, .sobre-container {
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -207,7 +253,7 @@ h1, .boldonse {
 }
 
 /*Fonte oswald*/
-h2, h3, p, ul, ol, li, footer, .oswald {
+.sobre-texto h2, h2, h3, p, ul, ol, li, footer, .oswald {
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: 550;
@@ -288,17 +334,19 @@ footer{
     height: auto;
 }
  .fonte {
-    color: #b9b9b9;
+    color: #6fbdf1;
     text-decoration: none;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 300;
     font-style: normal;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     text-align: center;
+    text-shadow: #413d3d 0px 0px 5px;
+    
 }
 .fonte :hover, .fonte :active {
-    color: #19f3ef;
+    color: #19ded4;
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
 }
