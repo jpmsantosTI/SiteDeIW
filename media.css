@@ -1,0 +1,46 @@
+@media (min-width: 2168px) {
+    .banner {
+        margin-top: 9em;
+    }
+}
+@media (min-width: 1527.5px) and (max-width: 2168px) {
+    .banner {
+        margin-top: 7.4em;
+    }
+}
+@media (min-width: 952px) and (max-width: 1527.5px) {
+    .banner {
+        margin-top: 5em;
+        height: 30vh;
+    }
+    .banner::after {
+        height: 30%;
+    }
+}
+@media (min-width: 843px) and (max-width: 952px) {
+    .banner {
+        margin-top: 4em;
+        height: 20vh;
+    }
+    .banner::after {
+        height: 20%;
+    }
+}
+@media (min-width: 713px) and (max-width: 843px) {
+    .banner {
+        margin-top: 12em;
+        height: 20vh;
+    }
+    .banner::after {
+        height: 20%;
+    }
+}
+@media (min-width: 0px) and (max-width: 713px) {
+    .banner {
+        margin-top: 10em;
+        height: 15vh;
+    }
+    .banner::after {
+        height: 15%;
+    }
+}
