@@ -200,11 +200,11 @@ nav a:active {
 /*Arruma a responsibilidade dependendo da altura e largura da tela*/
 @media (max-height: 721px) and (min-width: 844px) {
     .banner {
-        height: 50vh;
-        margin-top: 6em;
+        height: 50vh !important;
+        margin-top: 6em !important;
     }
     .banner::after {
-        height: 50%;
+        height: 50% !important;
     }
 }
 
