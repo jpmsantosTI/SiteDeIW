@@ -103,7 +103,8 @@ nav a:active {
     box-shadow: #413d3d 0px 0px 5px;
 }
 #sobre{
-    padding-left: 35px;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .sobre-container {
@@ -142,8 +143,7 @@ nav a:active {
 .hex{
     width: 140px;
     height: 120px;
-    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
-    overflow: hidden;
+    clip-path: polygon(50% 1.25%, 9.9% 20.56%, 0% 63.95%, 27.75% 98.75%, 72.25% 98.75%, 100% 63.95%, 90.1% 20.56%);
     position: relative;
 }
 .hex img {
@@ -321,6 +321,10 @@ footer{
     margin-top: 5px;
     text-align: justify;
 }
+section {
+    padding-left: 2em;
+    padding-right: 2em;
+}
 #franquias li {
     display: flex;
     flex-direction: column;
@@ -339,15 +343,13 @@ footer{
     height: auto;
 }
  .fonte {
-    color: #6fbdf1;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.7em;
-    font-weight: 300;
+    font-size: 0.6em;
+    font-weight: 700;
     font-style: normal;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    text-align: center;
-    text-shadow: #413d3d 0px 0px 5px;
     
 }
 .fonte :hover, .fonte :active {
