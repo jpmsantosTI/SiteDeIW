@@ -350,10 +350,10 @@ section {
     font-style: normal;
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
-    
 }
-.fonte:hover, .fonte :active {
+.fonte:hover, .fonte:active {
     color: #19ded4;
+    transition: all 0.3s ease-in-out;
 }
 .titulo {
     font-size: 3vw;
