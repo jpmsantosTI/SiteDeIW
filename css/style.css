@@ -102,6 +102,11 @@ nav a:active {
     background: rgba(0, 0, 0, 0.468);
     box-shadow: #413d3d 0px 0px 5px;
 }
+section {
+    padding-left: 2em;
+    padding-right: 2em;
+    scroll-margin-top: 90px;
+}
 #sobre{
     padding-left: 1em;
     padding-right: 1em;
@@ -248,6 +253,9 @@ nav a:active {
         width: 80%;
         height: auto;
     }
+    section {
+        scroll-margin-top: 200px;
+    }
 }
 
 /*Fonte boldonse*/
@@ -321,10 +329,7 @@ footer{
     margin-top: 5px;
     text-align: justify;
 }
-section {
-    padding-left: 2em;
-    padding-right: 2em;
-}
+
 #franquias li {
     display: flex;
     flex-direction: column;
@@ -359,4 +364,7 @@ section {
     font-size: 3vw;
     font-weight: 400;
     font-style: normal;
+}
+.imgcard {
+    width: 70%;
 }
