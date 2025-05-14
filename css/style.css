@@ -63,6 +63,7 @@ nav a:hover {
     transition-delay: 0s;
     font-size: 1.2em;
     box-shadow: 0 0 5px rgb(34, 38, 52);
+    trasition: 0.5s
 }
 nav a:active {
     color: #413d3d;
