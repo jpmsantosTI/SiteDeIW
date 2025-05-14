@@ -54,6 +54,7 @@ nav ul li a {
     flex: 1 1 auto;
     border-radius: 5px;
     max-width: 121px;
+    transition: 0.5s
 }
 nav a:hover {
     color: #413d3d;
@@ -63,7 +64,6 @@ nav a:hover {
     transition-delay: 0s;
     font-size: 1.2em;
     box-shadow: 0 0 5px rgb(34, 38, 52);
-    transition: 0.5s
 }
 nav a:active {
     color: #413d3d;
@@ -106,7 +106,7 @@ nav a:active {
 section {
     padding-left: 2em;
     padding-right: 2em;
-    scroll-margin-top: 90px;
+    scroll-margin-top: 7em;
 }
 #sobre{
     padding-left: 1em;
@@ -320,7 +320,9 @@ footer{
     .rayman {
         width: 50vw;
     }
-    
+    #franquias figure {
+        width: 60vw !important;
+    }
 }
 .raymandiv {
     display: flex;
@@ -366,6 +368,39 @@ footer{
     font-weight: 400;
     font-style: normal;
 }
-.imgcard {
-    width: 70%;
+
+#curiosidades .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+    padding: 50px 0;
+}
+#curiosidades .item {
+    background-color: #383434;
+    border: inset 0.2em #ddd;
+    border-radius: 10px;
+    padding: 5%;
+    box-shadow: 0 4px 8px rgb(46, 45, 45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+#curiosidades .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+#curiosidades .item:active {
+    transform: scale(0.98);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+#curiosidades .item p {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: white;
+}
+#curiosidades img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
 }
