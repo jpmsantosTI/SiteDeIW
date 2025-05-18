@@ -56,7 +56,7 @@ nav ul li a {
     max-width: 121px;
     transition: 0.5s
 }
-nav a:hover {
+nav a:hover, nav a:active {
     color: #413d3d;
     border-width: 0.1em 0.1em 0.1em 0.1em;
     border-style: solid;
@@ -66,10 +66,11 @@ nav a:hover {
     box-shadow: 0 0 5px rgb(34, 38, 52);
 }
 nav a:active {
-    color: #413d3d;
+    color: #1900ff;
     border-width: 0.1em 0.1em 0.1em 0.1em;
     border-style: solid;
     border-color: rgb(34, 38, 52);
+    font-size: 1.2em;
 }
 .logo {
     left: 0px;
@@ -106,7 +107,8 @@ nav a:active {
 section {
     padding-left: 2em;
     padding-right: 2em;
-    scroll-margin-top: 7em;
+    padding-top: 0.2em;
+    scroll-margin-top: 8.5em;
 }
 #sobre{
     padding-left: 1em;
@@ -173,12 +175,12 @@ section {
         margin-top: 7em;
     }
 }
-@media (min-width: 843px) and (max-width: 952px) {
+@media (min-width: 870px) and (max-width: 952px) {
     .banner {
         margin-top: 6em;
     }
 }
-@media (min-width: 713px) and (max-width: 843px) {
+@media (min-width: 713px) and (max-width: 870px) {
     .banner {
         margin-top: 12em;
     }
@@ -204,7 +206,7 @@ section {
 /*---------------------------------*/
 
 /*Arruma a responsibilidade dependendo da altura e largura da tela*/
-@media (max-height: 721px) and (min-width: 844px) {
+@media (max-height: 721px) and (min-width: 870px) {
     .banner {
         height: 50vh !important;
         margin-top: 6em !important;
@@ -219,7 +221,7 @@ section {
 
 
 /*melhora a responsividade da pagina abaixando o banner*/
-@media (max-width: 843.4px) {
+@media (max-width: 870px) {
     header .container, .sobre-container {
         flex-direction: column;
         align-items: center;
@@ -369,7 +371,7 @@ footer{
     font-style: normal;
 }
 
-#curiosidades .container {
+#curiosidades .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -377,13 +379,13 @@ footer{
     padding: 50px 0;
 }
 #curiosidades .item {
-    background-color: #383434;
-    border: inset 0.2em #ddd;
-    border-radius: 10px;
-    padding: 5%;
-    box-shadow: 0 4px 8px rgb(46, 45, 45);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
+    border: inset 0.2em #1a489e;
+    border-radius: 1.25em;
+    background-color: #1e4db1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 #curiosidades .item:hover {
     transform: translateY(-5px);
@@ -394,13 +396,36 @@ footer{
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 #curiosidades .item p {
-    margin-top: 15px;
     font-size: 0.95em;
     color: white;
+    text-align: center;
+}
+#curiosidades .item h3 {
+    margin-bottom: 1.3em;
+    color: #fff;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #curiosidades img {
     width: 100%;
     max-width: 150px;
     height: auto;
     margin-bottom: 10px;
+}
+.card {
+    padding: 5%;
+    background-color: #dd9324;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1em;
+}
+#curiosidades .item-text {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    background-color: #413d3d;
+    border-radius: 1em;
+    margin-bottom: auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
