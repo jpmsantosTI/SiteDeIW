@@ -413,10 +413,10 @@ footer{
     height: auto;
     margin-bottom: 10px;
 }
-.card {
+.divimg {
     padding: 5%;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 1em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-bottom: 1em;
 }
@@ -428,4 +428,60 @@ footer{
     border-radius: 1em;
     margin-bottom: auto;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: center;
+}
+.card h3 {
+    margin-top: 0;
+}
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(102, 91, 91, 0.603);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal:target{
+    display: flex;
+}
+.modal-content {
+    background-color: rgb(235, 7, 7);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 20px gray;
+}
+.card{
+    max-width: 300px;
+}
+.close-btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgb(212, 32, 32);
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
 }
