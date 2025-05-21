@@ -415,7 +415,7 @@ footer{
 }
 .card {
     padding: 5%;
-    background-color: #dd9324;
+    background-color: white;
     border-radius: 10px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-bottom: 1em;
