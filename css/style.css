@@ -259,8 +259,13 @@ section {
     section {
         scroll-margin-top: 200px;
     }
+    .modal{
+        margin-top: 100px;
+    } 
+    .modal-content{
+        max-height: 60vh;
+    } 
 }
-
 /*Fonte boldonse*/
 h1, .boldonse {
     font-family: "Boldonse", system-ui;
@@ -412,6 +417,7 @@ footer{
     max-width: 150px;
     height: auto;
     margin-bottom: 10px;
+    border-radius: 1em;
 }
 .divimg {
     padding: 5%;
@@ -430,12 +436,25 @@ footer{
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .modal {
-    background: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.13);
     margin: auto;
-    text-align: center;
+    text-align: justify;
+    z-index: 200;
+}
+.modal {
+    margin-top: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(26, 23, 23, 0.603);
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 .card h3 {
     margin-top: 0;
@@ -450,28 +469,20 @@ footer{
     border-radius: 6px;
     cursor: pointer;
 }
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(102, 91, 91, 0.603);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
+
 .modal:target{
     display: flex;
 }
 .modal-content {
-    background-color: rgb(235, 7, 7);
+    background-color: rgb(250, 250, 250);
+    overflow-y: auto;
+    max-height: 90vh;
     padding: 30px;
     border-radius: 10px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 5px 20px gray;
+    max-width: 600px;
+    text-align: justify;
+    box-shadow: 0 5px 20px rgb(0, 0, 0);
+    color: #1976d2;
 }
 .card{
     max-width: 300px;
