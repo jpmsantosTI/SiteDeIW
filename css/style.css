@@ -347,7 +347,7 @@ footer{
     width: 100%;
     height: auto;
 }
- .fonte {
+.fonte {
     color: #ffffff;
     text-decoration: none;
     font-size: 0.6em;
@@ -498,4 +498,19 @@ footer{
     gap: 20px;
     text-align: center;
     padding: 50px 0;
+}
+#franquias figure {
+    cursor: pointer;
+    border: inset 0.2em #1a489e;
+    border-radius: 1.25em;
+    background-color: #1e4db1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#franquias img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    border-radius: 1em;
 }
