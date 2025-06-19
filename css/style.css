@@ -331,9 +331,6 @@ footer{
     .rayman {
         width: 50vw;
     }
-    #franquias figure {
-        width: 60vw !important;
-    }
 }
 .raymandiv {
     display: flex;
@@ -492,13 +489,15 @@ footer{
     background: #020024;
     background: linear-gradient(109deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 33%, rgba(0, 212, 255, 1) 100%);
 }
-#franquias .container{
+/* Estilo para a seção franquias */
+#franquias .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     text-align: center;
     padding: 50px 0;
 }
+
 #franquias figure {
     cursor: pointer;
     border: inset 0.2em #1a489e;
@@ -507,10 +506,27 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-#franquias img {
+
+#franquias figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#franquias figure img {
     width: 100%;
+    max-width: 150px;
     height: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 1em;
+}
+
+#franquias figure figcaption {
+    color: white;
+    font-size: 1em;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
 }
