@@ -505,10 +505,14 @@ footer{
     background-color: #1e4db1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    min-width: 150px;
+    min-height: 150px;
 }
 
 #franquias figure:hover, #franquias figure:active {
