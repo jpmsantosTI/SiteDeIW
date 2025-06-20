@@ -320,15 +320,17 @@ footer{
     justify-content: center;
     text-align: justify;
     padding: 30px;
+    padding-top: 0px;
 }
 .rayman {
     height: auto;
     width: 30vw;
-    margin-top: 15px;
+    margin-top: 0em;
+    border-radius: 1em;
 }
 @media screen and (max-width: 863px) {
     .rayman {
-        width: 50vw;
+        width: 70vw;
     }
 }
 .raymandiv {
@@ -380,6 +382,7 @@ footer{
     gap: 20px;
     text-align: center;
     padding: 50px 0;
+    padding-bottom: 1em;
 }
 #curiosidades .item {
     cursor: pointer;
