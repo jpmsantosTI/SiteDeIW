@@ -9,8 +9,8 @@ body {
     color: white;
 }
 header {
-    background-color:  #bdd0de;
-    border: solid rgb(34, 38, 52);
+    background-color:  #b1d1e8;
+    border: solid rgb(16, 23, 49);
     border-width: 0.5em 0.9em 0.5em 0.9em;
     border-radius: 0px 0px 5px 5px;
     text-align: center;
@@ -49,7 +49,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: black;
-    background-color:  #a6c1d4;
+    background-color:  #68b1e5;
     padding: 7px 3% 7px 3%;
     flex: 1 1 auto;
     border-radius: 5px;
@@ -57,13 +57,14 @@ nav ul li a {
     transition: 0.5s
 }
 nav a:hover, nav a:active {
-    color: #413d3d;
-    border-width: 0.1em 0.1em 0.1em 0.1em;
+    color: #261818;
+    border-width: 0.1em;
     border-style: solid;
-    border-color: rgb(34, 38, 52);
-    transition-delay: 0s;
+    border-color: rgb(0, 0, 0);
     font-size: 1.2em;
-    box-shadow: 0 0 5px rgb(34, 38, 52);
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    background-color:  #75c5ff;
 }
 nav a:active {
     color: #1900ff;
@@ -247,14 +248,14 @@ main section{
         font-size: 0.9em;
     }
     nav ul li a {
-        padding: 0%; 
-        background-color: #bdd0de;    
+        padding: 0%;
+        background-color: #b1d1e8;
     }
     nav ul li a:hover, nav ul li a:active {
-        background-color: #bdd0de;
         color: #413d3d;
         border-width: 0;
-        box-shadow: 0 0 0px rgb(34, 38, 52)
+        box-shadow: 0 0 0px rgb(34, 38, 52);
+        background-color:  #b1d1e8;
     }
     main figure {
         width: 80%;
@@ -368,7 +369,8 @@ footer{
     font-optical-sizing: auto;
     margin-left: 6px;
     margin-right: 10px;
-    margin-top: 5%;
+    width: 100%;
+    display: inline-block;
 }
 .fonte:hover, .fonte:active {
     color: #19ded4;
@@ -481,14 +483,15 @@ footer{
 .modal-content {
     background-color: rgb(250, 250, 250);
     overflow-y: auto;
-    max-height: 75dvh;
+    max-height: 70dvh;
     padding: 30px;
     border-radius: 10px;
     max-width: 600px;
     text-align: justify;
     box-shadow: 0 5px 20px rgb(0, 0, 0);
     color: #1976d2;
-    margin-top: 8em;
+    margin-top: 9em;
+    position: relative;
 }
 .card{
     max-width: 300px;
@@ -565,4 +568,24 @@ footer{
     background-color: #413d3d;
     border-radius: 1em;
     width: 103%;
+}
+.modal .fonte {
+    color: #353131;
+    width: 100%;
+    margin-top: 0.9em;
+    display: inline-block;
+    
+}
+.modal .fonte:hover, .modal .fonte:active {
+    color: #1e92e0;
+    transition: all 0.3s ease-in-out;
+}
+.modal .fonte:visited {
+    width: 100%;
+    display: inline-block;
+}
+
+.modal h3 {
+    color: #07233e;
+    text-align: center;
 }
