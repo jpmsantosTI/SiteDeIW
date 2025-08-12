@@ -90,6 +90,14 @@ nav a:active {
     justify-content: center;
     text-align: center;
 }
+#bannercontato {
+    background:url(../img/bannersuporte.avif) no-repeat center center/cover;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .titulo {
     z-index: 2 !important;
     color: #ffffff;
@@ -193,19 +201,19 @@ main section{
 @media (max-width: 713px) and (min-width: 500px) {
     .banner {
         margin-top: 11em;
-        height: 20vw;
+        height: 28vw !important;
     }
     .banner::after {
-        height: 20vw;
+        height: 30vw;
     }
 }
 @media (max-width: 500px) {
     .banner {
         margin-top: 9.5em;
-        height: 30vw;
+        height: 39vw;
     }
     .banner::after {
-        height: 30vw;
+        height: 32vw;
     }
 }
 /*---------------------------------*/
@@ -261,6 +269,9 @@ main section{
         width: 80%;
         height: auto;
     }
+    .banner{
+        background:url(../img/bannermaior.png) no-repeat center center/cover;
+    }
     section {
         scroll-margin-top: 200px;
     }
@@ -271,14 +282,14 @@ main section{
 
 }
 /*Fonte boldonse*/
-h1, .boldonse {
+h1, .boldonse{
     font-family: "Boldonse", system-ui;
     font-weight: 400;
     font-style: normal;
 }
 
 /*Fonte oswald*/
-.sobre-texto h2, h2, h3, p, ul, ol, li, footer, .oswald, .btn, .close-btn {
+.sobre-texto h2, h2, h3, p, ul, ol, li, footer,#reset, .oswald, .btn, .close-btn, label {
     font-family: "Oswald", sans-serif;
     font-optical-sizing: auto;
     font-weight: 550;
@@ -589,3 +600,57 @@ footer{
     color: #07233e;
     text-align: center;
 }
+
+.formulario {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    margin-top: 40px;
+    color: #000080;
+  }
+  
+  .grupo-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 1em;
+  }
+  
+  .grupo-form input,
+  .grupo-form select,
+  .grupo-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    margin-top: 2px;
+  }
+  
+  .grupo-form input[type="checkbox"],
+  .grupo-form input[type="radio"] {
+    margin-right: 8px;
+    margin-top: 0;
+  }
+  
+  .grupo-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  .formulario button{
+    border: #352ebe outset;
+  }
+  #reset{
+    color: #ffffff;
+    background-color: #0c5bee;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    border: #463fd6 outset;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+  }
+  #reset:hover{
+    background-color: #1a489e;
+  }

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Ubisoft</title>
+
+    <!--Link das fontes baixadas no Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="img\ubisoft_icon.webp" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/Ubisoft_logo.svg" class="logo" alt="logo da Ubisoft"/></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#curiosidades">Curiosidades</a></li>
+                    <li><a href="index.html#mascote">Mascote</a></li>
+                    <li><a href="index.html#franquias">Franquias</a></li>
+                    <li><a href="contato.html#bannercontato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+        <section id="bannercontato" class="banner">
+            <h1 class="titulo">Converse Conosco</h1>
+        </section>
+        <main>
+        <!--Sobre-->
+        <section id="sobre">
+            <div class="sobre-container">
+                <div class="sobre-texto">
+                    <h1>Como podemos te ajudar:</h1>
+            <p>
+                Ubisoft Entertainment anteriormente Ubi Soft Entertainment, é uma editora
+                e publicadora de jogos eletrônicos francesa com sede no
+                subúrbio de Montreuil, em Paris.
+                <br>
+                A Ubisoft possui 30 estúdios em 19
+                países, além de subsidiárias em 30 países;
+                <br>
+                O maior estúdio de desenvolvimento da empresa é a Ubisoft Montreal, no
+                Canadá, que atualmente emprega mais de 4,000 pessoas.
+                </p>
+            <p>
+                A empresa desenvolve e publica seus jogos para celulares, computador e
+                consoles. Suas franquias de jogos eletrônicos incluem: Assassin's
+                Creed, The Crew, Far Cry, For Honor, Prince of Persia, Tom Clancy's,
+                Just Dance, Watch Dogs, Rayman e Rabbids.
+            </p>
+            
+                <div class ="hex-grid">
+                    <div class="hex"><img src="img/PaganMin.webp" alt=""></div>
+                    <div class="hex"><img src="img/cards/basim.webp" alt=""></div>
+                    <div class="hex"><img src="img/rabbit.png" alt=""></div>
+                    <div class="hex"><img src="img/rayman-legendsBanner.jpg" alt=""></div>
+                    <div class="hex"><img src="img/uno2.png" alt=""></div>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h1>Contato:</h1>
+                <form action="https://formsubmit.co/jpmsantosti" method="post" class="formulario">
+                    
+                    <div class="grupo-form">
+                        <label for="username">Nome Completo:</label>
+                        <input type="text" id="username" placeholder="Phill Spencer" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="exemplo@email.com" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="tel">Telefone:</label>
+                        <input type="tel" id="tel" placeholder="(+11) 22 12345-6789" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="idade">Idade:</label>
+                        <input type="number" id="idade" min="10" max="120" placeholder="35" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="fgames">Jogo Favorito:</label>
+                        <select id="fgames" name="fgames" required>
+                            <option value="farcry1">Far Cry 1</option>
+                            <option value="farcry2">Far Cry 2</option>
+                            <option value="farcry3">Far Cry 3</option>
+                            <option value="farcry4">Far Cry 4</option>
+                            <option value="ac1">Assassin's Creed I</option>
+                            <option value="ac2">Assassin's Creed II</option>
+                            <option value="ac3">Assassin's Creed III</option>
+                            <option value="ac4">Assassin's Creed IV</option>
+                            <option value="acrogue">Assassin's Creed Rogue</option>
+                            <option value="rayman">Rayman</option>
+                            <option value="raymanorigins">Rayman Origins</option>
+                            <option value="raymanlegends">Rayman Legends</option>
+                            <option value="thecrew">thecrew</option>
+                            <option value="outro">outro</option>                
+                        </select>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="gostodojogo">Gosto do jogo:</label>
+                        <input type="range" id="gostodojogo" min="0" max="10">
+                    </div>
+                    <div class="grupo-form">
+                        <p>Franquia Favorita:</p><br>
+                        <input type="radio" id="ac" name="franquiafav" value="ac">
+                        <label for="css">Assassin's Creed</label><br>
+                        <input type="radio" id="farcry" name="franquiafav" value="farcry">
+                        <label for="farcry">Far Cry</label><br>
+                        <input type="radio" id="rayman" name="franquiafav" value="rayman">
+                        <label for="rayman">Rayman</label><br>
+                        <input type="radio" id="thecrew" name="franquiafav" value="thecrew">
+                        <label for="thecrew">The Crew</label><br>
+                        <input type="radio" id="wdogs" name="franquiafav" value="wdogs">
+                        <label for="wdogs">Whatch Dogs</label><br>
+                        <input type="radio" id="scell" name="franquiafav" value="scell">
+                        <label for="scll">Splinter Cell</label><br>
+                        <input type="radio" id="justdance" name="franquiafav" value="justdance">
+                        <label for="justdance">Just Dance</label><br>
+                        <input type="radio" id="ppersia" name="franquiafav" value="ppersia">
+                        <label for="ppersia">Prince of Persia</label>
+                    </div><br>
+                    <div class="grupo-form">
+                        <p>Joguei:</p><br>
+                        <input type="checkbox" id="game1" name="game1" value="rayman">
+                        <label for="game1">Rayman</label><br>
+                        <input type="checkbox" id="game2" name="game2" value="farcry">
+                        <label for="game2">Far Cry</label><br>
+                        <input type="checkbox" id="game3" name="game3" value="ac">
+                        <label for="game3">Assassin's Creed</label><br>
+                        <input type="checkbox" id="game4" name="game4" value="thecrew">
+                        <label for="game4">The Crew</label><br>
+                        <input type="checkbox" id="game5" name="game5" value="ppersia">
+                        <label for="game5">Prince of Persia</label><br>
+                        <input type="checkbox" id="game6" name="game6" value="scell">
+                        <label for="game6">Splinter Cell</label><br>
+                        
+                    </div>
+                    <div class="grupo-form">
+                        <label for="cor">Cor Favorita:</label>
+                        <input type="color" id="cor" required>
+                    </div>
+                    <div class="grupo-form">
+                        <label for="feedback">Sugestão:</label>
+                        <textarea type="textarea" id="feedback" rows="4" placeholder="mensagem..." required></textarea>
+                    </div>
+                    <div class="grupo-form">
+                        
+                    </div>
+                    <button type="submit" class="btn">Enviar</button>
+                      <input type="reset" id="reset">
+                      <input type="hidden" name="_captcha" value="false"> 
+                      <input type="hidden" name="_next" value="https://jpmsantosti.github.io/enviadosucesso.html"> 
+
+                </form>
+            </div>
+        </section>
+
+    <footer id="contato">Site desenvolvido por João Pedro</footer>
+</body>
+</html>
