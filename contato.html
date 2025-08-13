@@ -1,13 +1,16 @@
-<html lang="pt-br"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Ubisoft</title>
 
     <!--Link das fontes baixadas no Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Boldonse&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="img\ubisoft_icon.webp" type="image/x-icon">
 </head>
 
@@ -15,7 +18,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="img/Ubisoft_logo.svg" class="logo" alt="logo da Ubisoft"></a>
+                <a href="index.html"><img src="img/Ubisoft_logo.svg" class="logo" alt="logo da Ubisoft"/></a>
             </div>
             <nav>
                 <ul>
@@ -57,7 +60,7 @@
                 Just Dance, Watch Dogs, Rayman e Rabbids.
             </p>
             
-                <div class="hex-grid">
+                <div class ="hex-grid">
                     <div class="hex"><img src="img/PaganMin.webp" alt=""></div>
                     <div class="hex"><img src="img/cards/basim.webp" alt=""></div>
                     <div class="hex"><img src="img/rabbit.png" alt=""></div>
@@ -66,7 +69,7 @@
                 </div>
             </div>
             
-        </div></section>
+        </section>
 
         <section id="contato">
             <div class="container">
@@ -75,23 +78,23 @@
                     
                     <div class="grupo-form">
                         <label for="username">Nome Completo:</label>
-                        <input type="text" id="username" placeholder="Phill Spencer" required="">
+                        <input type="text" id="username" placeholder="Phill Spencer" required name="name">
                     </div>
                     <div class="grupo-form">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" placeholder="exemplo@email.com" required="">
+                        <input type="email" id="email" placeholder="exemplo@email.com" required name="email">
                     </div>
                     <div class="grupo-form">
                         <label for="tel">Telefone:</label>
-                        <input type="tel" id="tel" placeholder="(+11) 22 12345-6789" required="">
+                        <input type="tel" id="tel" placeholder="(+11) 22 12345-6789" required name="Telefone">
                     </div>
                     <div class="grupo-form">
                         <label for="idade">Idade:</label>
-                        <input type="number" id="idade" min="10" max="120" placeholder="35" required="">
+                        <input type="number" id="idade" min="10" max="120" placeholder="35" required name="idade">
                     </div>
                     <div class="grupo-form">
                         <label for="fgames">Jogo Favorito:</label>
-                        <select id="fgames" name="fgames" required="">
+                        <select id="fgames" name="fgames" required>
                             <option value="farcry1">Far Cry 1</option>
                             <option value="farcry2">Far Cry 2</option>
                             <option value="farcry3">Far Cry 3</option>
@@ -110,7 +113,7 @@
                     </div>
                     <div class="grupo-form">
                         <label for="gostodojogo">Gosto do jogo:</label>
-                        <input type="range" id="gostodojogo" min="0" max="10">
+                        <input type="range" id="gostodojogo" min="0" max="10" name="gostodojogo">
                     </div>
                     <div class="grupo-form">
                         <p>Franquia Favorita:</p><br>
@@ -149,11 +152,11 @@
                     </div>
                     <div class="grupo-form">
                         <label for="cor">Cor Favorita:</label>
-                        <input type="color" id="cor" required="">
+                        <input type="color" id="cor" required name="color">
                     </div>
                     <div class="grupo-form">
                         <label for="feedback">Sugestão:</label>
-                        <textarea type="textarea" id="feedback" rows="4" placeholder="mensagem..." required=""></textarea>
+                        <textarea type="textarea" id="feedback" rows="4" placeholder="mensagem..." required name="feedback"></textarea>
                     </div>
                     <div class="grupo-form">
                         
@@ -161,14 +164,12 @@
                     <button type="submit" class="btn">Enviar</button>
                       <input type="reset" id="reset">
                       <input type="hidden" name="_captcha" value="false"> 
-                      <input type="hidden" name="_next" value="https://jpmsantosti.github.io/contato.html"> 
+                      <input type="hidden" name="_next" value="https://jpmsantosti.github.io/enviadosucesso.html"> 
 
                 </form>
             </div>
         </section>
 
     <footer id="contato">Site desenvolvido por João Pedro</footer>
-
-
-</main></body></html>
-
+</body>
+</html>
