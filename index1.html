@@ -13,7 +13,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="img\ubisoft_icon.webp" type="image/x-icon">
 </head>
+<style>
+    #sobre {
+  position: relative;
+  min-height: 400px; /* garante espaço pro jogo */
+  background: linear-gradient(to bottom, #002060, #0050a0);
+  color: white;
+  overflow: hidden;
+}
 
+/* Rayman */
+#raymang {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80px;
+  z-index: 10;
+}
+
+/* Lumens */
+.lumen {
+  position: absolute;
+  width: 40px;
+  z-index: 5;
+}
+
+/* Placar */
+#placar {
+  font-size: 20px;
+  margin: 10px;
+  font-weight: bold;
+  color: yellow;
+}
+
+</style>
 <body>
     <header>
         <div class="container">
@@ -34,10 +67,18 @@
         </div>
     </header>
     
-        <section id="inicio" class="banner">
+        <section id="inicio" class="banner" style="position:relative;">
             <h1 class="titulo">Explore o Universo da Ubisoft</h1>
+            <!-- Minijogo Rayman no banner -->
+            <div id="rayman-game-container" style="position:absolute; inset:0; pointer-events:auto; z-index:100;">
+              <img id="rayman-game-rayman" src="assets/gifrayman.gif" alt="Rayman" style="position:absolute; width:90px; left:50%; top:calc(100% - 90px); transform:translateX(-50%) scaleX(1); z-index:102;">
+              <div id="rayman-game-lumens"></div>
+              <!-- Removido o contador de lumens -->
+              <div id="rayman-game-overlay"></div>
+            </div>
         </section>
         <main>
+            
         <!--Sobre-->
         <section id="sobre">
             <div class="sobre-container">
@@ -72,7 +113,16 @@
                 </div>
             </div>
             
+            <!-- Removido Rayman duplicado e lumens estáticos -->
+            <!-- <img src="assets/gifrayman.gif" alt="Rayman" id="raymang">
+            <img src="assets/lumem.png.png" class="lumen" style="top:80px; left:200px;">
+            <img src="assets/lumem.png.png" class="lumen" style="top:150px; left:400px;">
+            <img src="assets/lumem.png.png" class="lumen" style="top:220px; left:100px;">
+            <script>...</script> -->
+  
         </section>
+        
+            
 
         <section id="curiosidades">
             <h1>Curiosidades:</h1>
@@ -345,6 +395,148 @@
             </div>
         </div>
     </div>
+    <script>
+(function(){
+  const bannerSection = document.getElementById('inicio');
+  const container = document.getElementById('rayman-game-container');
+  const rayman = document.getElementById('rayman-game-rayman');
+  const lumensDiv = document.getElementById('rayman-game-lumens');
+  // Removido scoreDiv
+  const raymanIdle = 'assets/gifrayman.gif';
+  const raymanJump = 'assets/raymangifpulo.gif';
+  let sectionRect = bannerSection.getBoundingClientRect();
+  let raymanX = sectionRect.width/2 - 45;
+  let raymanY = sectionRect.height - 90;
+  let velocityY = 0;
+  let gravity = 0.7;
+  let jumpStrength = -15;
+  let movingLeft = false;
+  let movingRight = false;
+  let isJumping = false;
+  let groundY = sectionRect.height - 90;
+  let totalLumens = 5;
+
+  function spawnLumens(count) {
+    lumensDiv.innerHTML = '';
+    for(let i=0;i<count;i++){
+      const l = document.createElement('img');
+      l.src = 'assets/lumem.png.png';
+      l.className = 'rayman-game-lumen';
+      l.style.position = 'absolute';
+      l.style.width = '50px';
+      l.style.zIndex = 101;
+      let lx = 80 + Math.random()*(sectionRect.width-200);
+      let ly = groundY - Math.random()*200;
+      l.style.left = lx+'px';
+      l.style.top = ly+'px';
+      lumensDiv.appendChild(l);
+    }
+  }
+
+  function updateRayman(){
+    raymanX = Math.max(0, Math.min(sectionRect.width-90, raymanX));
+    raymanY = Math.max(0, Math.min(groundY, raymanY));
+    rayman.style.left = raymanX+'px';
+    rayman.style.top = raymanY+'px';
+  }
+
+  function checkCollisions(){
+    const rRect = rayman.getBoundingClientRect();
+    lumensDiv.querySelectorAll('.rayman-game-lumen').forEach(lumen => {
+      const lRect = lumen.getBoundingClientRect();
+      if(!(rRect.right < lRect.left || rRect.left > lRect.right || rRect.bottom < lRect.top || rRect.top > lRect.bottom)){
+        lumen.remove();
+      }
+    });
+  }
+
+  // Movimento contínuo durante o pulo
+  let moveInterval = null;
+  function startMove(dir) {
+    stopMove();
+    moveInterval = setInterval(() => {
+      if(dir==='left') {
+        raymanX -= 7;
+        rayman.style.transform = 'translateX(-50%) scaleX(-1)';
+      }
+      if(dir==='right') {
+        raymanX += 7;
+        rayman.style.transform = 'translateX(-50%) scaleX(1)';
+      }
+      updateRayman();
+      checkCollisions();
+    }, 16);
+  }
+  function stopMove() {
+    if(moveInterval) clearInterval(moveInterval);
+    moveInterval = null;
+  }
+  function jumpRayman(){
+    if(!isJumping){
+      velocityY = jumpStrength;
+      isJumping = true;
+      rayman.src = raymanJump;
+      let jumpInterval = setInterval(()=>{
+        raymanY += velocityY;
+        velocityY += gravity;
+        if(raymanY >= groundY){
+          raymanY = groundY;
+          velocityY = 0;
+          isJumping = false;
+          rayman.src = raymanIdle;
+          clearInterval(jumpInterval);
+        }
+        updateRayman();
+        checkCollisions();
+      }, 16);
+    }
+  }
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='a') startMove('left');
+    if(e.key==='d') startMove('right');
+    if(e.key==='w') jumpRayman();
+  });
+  document.addEventListener('keyup',function(e){
+    if(e.key==='a' || e.key==='d') stopMove();
+  });
+
+  // Suporte ao controle Xbox (Gamepad API)
+  let lastGamepadState = {left:false,right:false,jump:false};
+  function pollGamepad(){
+    const gamepads = navigator.getGamepads();
+    let gp = null;
+    for(let i=0;i<gamepads.length;i++){
+      if(gamepads[i]){ gp = gamepads[i]; break; }
+    }
+    if(gp){
+      let axisX = gp.axes[0];
+      let axisY = gp.axes[1];
+      let left = axisX < -0.5;
+      let right = axisX > 0.5;
+      let jump = gp.buttons[0].pressed || axisY < -0.5;
+      if(left && !lastGamepadState.left) moveRayman('left');
+      if(right && !lastGamepadState.right) moveRayman('right');
+      if(jump && !lastGamepadState.jump) jumpRayman();
+      lastGamepadState = {left,right,jump};
+    }
+    requestAnimationFrame(pollGamepad);
+  }
+  window.addEventListener('gamepadconnected', pollGamepad);
+
+  // Ajusta ao redimensionar
+  window.addEventListener('resize',()=>{
+    sectionRect = bannerSection.getBoundingClientRect();
+    groundY = sectionRect.height - 90;
+    raymanY = Math.min(raymanY, groundY);
+    spawnLumens(totalLumens);
+    updateRayman();
+  });
+
+  spawnLumens(totalLumens);
+  updateRayman();
+})();
+</script>
    
 
     

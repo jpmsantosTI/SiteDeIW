@@ -108,7 +108,7 @@ nav a:active {
     content: '';
     position: absolute;
     width: 100%;
-    height: 40.5%;
+    height: 100%;
     z-index: 1;
     background: rgba(0, 0, 0, 0.468);
     box-shadow: #413d3d 0px 0px 5px;
@@ -126,6 +126,7 @@ main section{
 #sobre{
     padding-left: 1em;
     padding-right: 1em;
+    position: relative;
 }
 
 .sobre-container {
@@ -333,6 +334,7 @@ footer{
     text-align: justify;
     padding: 30px;
     padding-top: 0px;
+    position: static;
 }
 .rayman {
     height: auto;
@@ -610,47 +612,83 @@ footer{
     margin: auto;
     margin-top: 40px;
     color: #000080;
-  }
-  
-  .grupo-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+}
+
+.grupo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 1em;
+}
+
+.grupo-form input,
+.grupo-form select,
+.grupo-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-top: 2px;
+}
+
+.grupo-form input[type="checkbox"],
+.grupo-form input[type="radio"] {
+  margin-right: 8px;
+  margin-top: 0;
+}
+
+.grupo-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.formulario button{
+  border: #352ebe outset;
+}
+#reset{
+  color: #ffffff;
+  background-color: #0c5bee;
+  padding: 0.8em;
+  border-radius: 0.5em;
+  border: #463fd6 outset;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+}
+#reset:hover{
+  background-color: #1a489e;
+}
+table{
+  margin: 0 auto;
+  margin-top: 2em;
+  background-color: #f5fbff;
+  padding: 2em;
+  color: #000080;
+  border-radius: 0.4em;
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+}
+.tabela{
+    width: 100%;
+    overflow-x: auto;
+}
+tr.subtitulos:hover{
+    background-color: rgb(154, 233, 233);
+}
+th,td{
+    padding: 0.5em;
+}
+th{
     font-size: 1em;
+}
+
+
+#raymanGame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* não atrapalha scroll e clique no texto */
+    z-index: 20;          /* fica acima do texto */
   }
   
-  .grupo-form input,
-  .grupo-form select,
-  .grupo-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    margin-top: 2px;
-  }
-  
-  .grupo-form input[type="checkbox"],
-  .grupo-form input[type="radio"] {
-    margin-right: 8px;
-    margin-top: 0;
-  }
-  
-  .grupo-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  .formulario button{
-    border: #352ebe outset;
-  }
-  #reset{
-    color: #ffffff;
-    background-color: #0c5bee;
-    padding: 0.8em;
-    border-radius: 0.5em;
-    border: #463fd6 outset;
-    cursor: pointer;
-    transition: ease-in 0.2s;
-  }
-  #reset:hover{
-    background-color: #1a489e;
-  }

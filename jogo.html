@@ -1,0 +1,244 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayman Platformer</title>
+  <style>
+
+    #game-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('assets/background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      overflow: hidden;
+    }
+
+    #raymang {
+      position: absolute;
+      width: 90px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .platform {
+      position: absolute;
+      width: 200px;
+      height: 60px;
+      background-image: url('assets/platform.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 5;
+    }
+
+    .lumen {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url('assets/lumem.png.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 8;
+    }
+
+    #timer,
+    #score {
+      position: absolute;
+      font-family: 'Arial', sans-serif;
+      font-size: 24px;
+      color: #333;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 5px;
+    }
+
+    #timer { top: 10px; left: 10px; }
+    #score { top: 10px; right: 10px; }
+  </style>
+</head>
+<div>
+  <div id="game-container">
+    <img id="raymang" src="assets/gifrayman.gif" alt="Rayman">
+    <div id="platform1" class="platform"></div>
+    <div id="platform2" class="platform"></div>
+    <div id="platform3" class="platform"></div>
+    <div id="platform4" class="platform"></div>
+    <div id="lumen-container"></div>
+    <div id="timer">Tempo: 30s</div>
+    <div id="score">Lumens: 0</div>
+  </div>
+
+  <script>
+    const rayman = document.getElementById('raymang');
+    const gameContainer = document.getElementById('game-container');
+    const lumenContainer = document.getElementById('lumen-container');
+    const timerDisplay = document.getElementById('timer');
+    const scoreDisplay = document.getElementById('score');
+
+    const platform1 = document.getElementById('platform1');
+    const platform2 = document.getElementById('platform2');
+    const platform3 = document.getElementById('platform3');
+    const platform4 = document.getElementById('platform4');
+
+    let gravity = 0.2;
+    let jumpStrength = -12;
+    let raymanSpeed = 5;
+    let initialGameTime = 30;
+    let lumensToCollect = 5;
+
+    let raymanX = gameContainer.offsetWidth / 2;
+    let raymanY = 0;
+    let raymanVelocityY = 0;
+    let isJumping = false;
+    let isMovingLeft = false;
+    let isMovingRight = false;
+    let score = 0;
+    let timeLeft = initialGameTime;
+    let currentLumensOnScreen = 0;
+
+    const raymanIdleSprite = "assets/gifrayman.gif";
+    const raymanJumpSprite = "assets/raymanpulando.png";
+
+    let platforms = [
+      { element: platform1, x: 100, y: gameContainer.offsetHeight - 200 },
+      { element: platform2, x: gameContainer.offsetWidth - 300, y: gameContainer.offsetHeight - 350 },
+      { element: platform3, x: gameContainer.offsetWidth / 2 - 100, y: gameContainer.offsetHeight - 500 },
+      { element: platform4, x: 50, y: gameContainer.offsetHeight - 650 }
+    ];
+
+    function updateRaymanPosition() {
+      raymanY += raymanVelocityY;
+      raymanVelocityY += gravity;
+
+      if (raymanY + rayman.offsetHeight > gameContainer.offsetHeight) {
+        raymanY = gameContainer.offsetHeight - rayman.offsetHeight;
+        raymanVelocityY = 0;
+        isJumping = false;
+        rayman.src = raymanIdleSprite;
+      }
+
+      platforms.forEach(platform => {
+        const platformRect = platform.element.getBoundingClientRect();
+        const raymanRect = rayman.getBoundingClientRect();
+
+        if (raymanVelocityY >= 0 &&
+          raymanRect.right > platformRect.left &&
+          raymanRect.left < platformRect.right &&
+          raymanRect.bottom <= platformRect.top + raymanVelocityY &&
+          raymanRect.bottom + raymanVelocityY >= platformRect.top) {
+          raymanY = platformRect.top - rayman.offsetHeight;
+          raymanVelocityY = 0;
+          isJumping = false;
+          rayman.src = raymanIdleSprite;
+        }
+      });
+
+      rayman.style.left = raymanX + 'px';
+      rayman.style.top = raymanY + 'px';
+    }
+
+    function spawnLumens(count) {
+      for (let i = 0; i < count; i++) {
+        const lumen = document.createElement('div');
+        lumen.classList.add('lumen');
+        
+        let lumenX, lumenY;
+        if (i < 2) {
+          lumenX = Math.random() * (gameContainer.offsetWidth - 50);
+          lumenY = gameContainer.offsetHeight - 80;
+        } else {
+          const platformIndex = (i - 2) % platforms.length;
+          const platform = platforms[platformIndex];
+          lumenX = platform.x + Math.random() * (platform.element.offsetWidth - 50);
+          lumenY = platform.y - 50;
+        }
+        
+        lumen.style.left = lumenX + 'px';
+        lumen.style.top = lumenY + 'px';
+        lumenContainer.appendChild(lumen);
+        currentLumensOnScreen++;
+      }
+    }
+
+    function updatePlatforms() {
+      platforms.forEach(platform => {
+        platform.element.style.left = platform.x + 'px';
+        platform.element.style.top = platform.y + 'px';
+      });
+    }
+
+    function gameLoop() {
+      updateRaymanPosition();
+
+      if (isMovingLeft) {
+        raymanX -= raymanSpeed;
+        rayman.style.transform = 'translateX(-50%) scaleX(-1)';
+      } else if (isMovingRight) {
+        raymanX += raymanSpeed;
+        rayman.style.transform = 'translateX(-50%) scaleX(1)';
+      }
+
+      if (raymanX < 0) raymanX = 0;
+      if (raymanX + rayman.offsetWidth > gameContainer.offsetWidth) raymanX = gameContainer.offsetWidth - rayman.offsetWidth;
+
+      document.querySelectorAll('.lumen').forEach(lumen => {
+        const lumenRect = lumen.getBoundingClientRect();
+        const raymanRect = rayman.getBoundingClientRect();
+
+        if (raymanRect.right > lumenRect.left &&
+          raymanRect.left < lumenRect.right &&
+          raymanRect.bottom > lumenRect.top &&
+          raymanRect.top < lumenRect.bottom) {
+          lumen.remove();
+          score++;
+          scoreDisplay.textContent = `Lumens: ${score}`;
+          currentLumensOnScreen--;
+          if (currentLumensOnScreen === 0) {
+            spawnLumens(lumensToCollect);
+          }
+        }
+      });
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'a' || e.key === 'ArrowLeft') {
+        isMovingLeft = true;
+      } else if (e.key === 'd' || e.key === 'ArrowRight') {
+        isMovingRight = true;
+      } else if ((e.key === 'w' || e.key === 'ArrowUp') && !isJumping) {
+        raymanVelocityY = jumpStrength;
+        isJumping = true;
+        rayman.src = raymanJumpSprite;
+      }
+    });
+
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'a' || e.key === 'ArrowLeft') {
+        isMovingLeft = false;
+      } else if (e.key === 'd' || e.key === 'ArrowRight') {
+        isMovingRight = false;
+      }
+    });
+
+    const gameTimer = setInterval(() => {
+      timeLeft--;
+      timerDisplay.textContent = `Tempo: ${timeLeft}s`;
+      if (timeLeft <= 0) {
+        clearInterval(gameTimer);
+        alert(`Fim de jogo! Você coletou ${score} Lumens.`);
+      }
+    }, 1000);
+
+    spawnLumens(lumensToCollect);
+    updatePlatforms();
+    gameLoop();
+  </script>
+</div>
+</html>
