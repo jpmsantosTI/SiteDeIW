@@ -13,13 +13,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet" />
     <link rel="shortcut icon" href="img\ubisoft_icon.webp" type="image/x-icon">
 </head>
+<style>
+    #sobre {
+        position: relative;
+        min-height: 400px;
+        /* garante espaço pro jogo */
+        background: linear-gradient(to bottom, #002060, #0050a0);
+        color: white;
+        overflow: hidden;
+    }
+
+    /* Rayman */
+    #raymang {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 80px;
+        z-index: 10;
+    }
+
+    /* Lumens */
+    .lumen {
+        position: absolute;
+        width: 40px;
+        z-index: 5;
+    }
+
+    /* Placar */
+    #placar {
+        font-size: 20px;
+        margin: 10px;
+        font-weight: bold;
+        color: yellow;
+    }
+</style>
 
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="img/Ubisoft_logo.svg" class="logo"
-                    alt="logo da Ubisoft"/>
+                <img src="img/Ubisoft_logo.svg" class="logo" alt="logo da Ubisoft" />
             </div>
             <nav>
                 <ul>
@@ -33,37 +66,46 @@
             </nav>
         </div>
     </header>
-    
-        <section id="inicio" class="banner">
-            <h1 class="titulo">Explore o Universo da Ubisoft</h1>
-        </section>
-        <main>
+
+    <section id="inicio" class="banner" style="position:relative;">
+        <h1 class="titulo">Explore o Universo da Ubisoft</h1>
+        <!-- Minijogo Rayman no banner -->
+        <div id="rayman-game-container" style="position:absolute; inset:0; pointer-events:auto; z-index:100;">
+            <img id="rayman-game-rayman" src="assets/gifrayman.gif" alt="Rayman"
+                style="position:absolute; width:90px; left:50%; top:calc(100% - 90px); transform:translateX(-50%) scaleX(1); z-index:102;">
+            <div id="rayman-game-lumens"></div>
+            <div id="rayman-game-overlay"></div>
+        </div>
+    </section>
+    <main>
+
         <!--Sobre-->
         <section id="sobre">
             <div class="sobre-container">
                 <div class="sobre-texto">
                     <h1>Sobre:</h1>
-            <p>
-                Ubisoft Entertainment anteriormente Ubi Soft Entertainment, é uma editora
-                e publicadora de jogos eletrônicos francesa com sede no
-                subúrbio de Montreuil, em Paris.
-                <br>
-                A Ubisoft possui 30 estúdios em 19
-                países, além de subsidiárias em 30 países;
-                <br>
-                O maior estúdio de desenvolvimento da empresa é a Ubisoft Montreal, no
-                Canadá, que atualmente emprega mais de 4,000 pessoas.
-                </p>
-            <p>
-                A empresa desenvolve e publica seus jogos para celulares, computador e
-                consoles. Suas franquias de jogos eletrônicos incluem: Assassin's
-                Creed, The Crew, Far Cry, For Honor, Prince of Persia, Tom Clancy's,
-                Just Dance, Watch Dogs, Rayman e Rabbids.
-            </p>
-            <a href="https://www.ubisoft.com/en-us/company/about-us/our-story" target="_blank" class="fonte">FONTE: UBISOFT</a>
+                    <p>
+                        Ubisoft Entertainment anteriormente Ubi Soft Entertainment, é uma editora
+                        e publicadora de jogos eletrônicos francesa com sede no
+                        subúrbio de Montreuil, em Paris.
+                        <br>
+                        A Ubisoft possui 30 estúdios em 19
+                        países, além de subsidiárias em 30 países;
+                        <br>
+                        O maior estúdio de desenvolvimento da empresa é a Ubisoft Montreal, no
+                        Canadá, que atualmente emprega mais de 4,000 pessoas.
+                    </p>
+                    <p>
+                        A empresa desenvolve e publica seus jogos para celulares, computador e
+                        consoles. Suas franquias de jogos eletrônicos incluem: Assassin's
+                        Creed, The Crew, Far Cry, For Honor, Prince of Persia, Tom Clancy's,
+                        Just Dance, Watch Dogs, Rayman e Rabbids.
+                    </p>
+                    <a href="https://www.ubisoft.com/en-us/company/about-us/our-story" target="_blank"
+                        class="fonte">FONTE: UBISOFT</a>
                 </div>
 
-                <div class ="hex-grid">
+                <div class="hex-grid">
                     <div class="hex"><img src="img/PaganMin.webp" alt=""></div>
                     <div class="hex"><img src="img/EzioIcon.jpg" alt=""></div>
                     <div class="hex"><img src="img/rabbit.png" alt=""></div>
@@ -71,59 +113,67 @@
                     <div class="hex"><img src="img/uno2.png" alt=""></div>
                 </div>
             </div>
-            
         </section>
 
         <section id="curiosidades">
             <h1>Curiosidades:</h1>
-        
+
             <div class="container">
-            <div class="item">
-                <div class="divimg"><img src="img/ubisoft_icon.webp" alt="Ubisoft logo" class="imgcard"></div>
-                <div class="item-text">
-                    <h3>Origem do Nome</h3>
-                    <p>O nome "Ubisoft" é uma combinação de "ubiquidade" e "software", refletindo a visão da empresa de estar presente em todos os lugares com seus jogos.</p>
-                    <a href="#modal1" class="btn">Saiba mais</a>
+                <div class="item">
+                    <div class="divimg"><img src="img/ubisoft_icon.webp" alt="Ubisoft logo" class="imgcard"></div>
+                    <div class="item-text">
+                        <h3>Origem do Nome</h3>
+                        <p>O nome "Ubisoft" é uma combinação de "ubiquidade" e "software", refletindo a visão da empresa
+                            de estar presente em todos os lugares com seus jogos.</p>
+                        <a href="#modal1" class="btn">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="divimg"><img src="img/cards/zombi.jpg" alt="" class="imgcard"></div>
+                    <div class="item-text">
+                        <h3>Primeiro Jogo</h3>
+                        <p>O primeiro jogo publicado pela Ubisoft foi "Zombi", lançado em 1986, um jogo de sobrevivência
+                            ambientado em um apocalipse zumbi.</p>
+                        <a href="#modal2" class="btn">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="divimg"><img src="https://i.scdn.co/image/ab67616100005174cd219b884bd0120e8cde48bc"
+                            alt="" class="imgcard"></div>
+                    <div class="item-text">
+                        <h3>Assassin's Creed Unity e Notre Dame</h3>
+                        <p>Em 2019, todos acreditávamos que Assassin's Creed Unity serviu para reconstruir Notre Dame
+                            após seu incêndio.</p>
+                        <a href="#modal3" class="btn">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="divimg"><img
+                            src="https://eagles-team-experiences.com/wp-content/uploads/2023/06/Just-Dance-1.jpg" alt=""
+                            class="imgcard"></div>
+                    <div class="item-text">
+                        <h3>Recorde de Just Dance</h3>
+                        <p>O jogo "Just Dance" entrou para o Guinness World Records como o jogo de dança mais vendido de
+                            todos os tempos.</p>
+                        <a href="#modal4" class="btn">Saiba mais</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="divimg"><img src="https://t.ctcdn.com.br/-KHUWQ3FtNU_j_hRKNdUEurF634=/i490035.jpeg">
+                    </div>
+                    <div class="item-text">
+                        <h3>Expansão Global</h3>
+                        <p>A Ubisoft possui estúdios em mais de 19 países, demonstrando sua presença global e
+                            diversidade cultural no desenvolvimento de jogos.</p>
+                        <a href="#modal5" class="btn">Saiba mais</a>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="divimg"><img src="img/cards/zombi.jpg" alt="" class="imgcard"></div>
-                <div class="item-text">
-                    <h3>Primeiro Jogo</h3>
-                    <p>O primeiro jogo publicado pela Ubisoft foi "Zombi", lançado em 1986, um jogo de sobrevivência ambientado em um apocalipse zumbi.</p>
-                    <a href="#modal2" class="btn">Saiba mais</a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="divimg"><img src="https://i.scdn.co/image/ab67616100005174cd219b884bd0120e8cde48bc" alt="" class="imgcard"></div>
-                <div class="item-text">
-                    <h3>Assassin's Creed Unity e Notre Dame</h3>
-                    <p>Em 2019, todos acreditávamos que Assassin's Creed Unity serviu para reconstruir Notre Dame após seu incêndio.</p>
-                    <a href="#modal3" class="btn">Saiba mais</a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="divimg"><img src="https://eagles-team-experiences.com/wp-content/uploads/2023/06/Just-Dance-1.jpg" alt="" class="imgcard"></div>
-                <div class="item-text">
-                    <h3>Recorde de Just Dance</h3>
-                    <p>O jogo "Just Dance" entrou para o Guinness World Records como o jogo de dança mais vendido de todos os tempos.</p>
-                    <a href="#modal4" class="btn">Saiba mais</a>
-                </div>
-            </div>
-            <div class="item">
-                <div class="divimg"><img src="https://t.ctcdn.com.br/-KHUWQ3FtNU_j_hRKNdUEurF634=/i490035.jpeg"></div>
-                <div class="item-text">
-                    <h3>Expansão Global</h3>
-                    <p>A Ubisoft possui estúdios em mais de 19 países, demonstrando sua presença global e diversidade cultural no desenvolvimento de jogos.</p>
-                    <a href="#modal5" class="btn">Saiba mais</a>
-                </div>
-            </div>
-            </div>
-        
+
         </section>
 
-         <!--Mascote-->
-         <section id="mascote">
+        <!--Mascote-->
+        <section id="mascote">
             <div class="raymandiv">
                 <h1>Mascote:</h1>
 
@@ -132,21 +182,30 @@
             </div>
             <div class="textray boldonse">
                 <p>
-                    Criado pela primeira vez na Ubisoft Montpellier em 1995, Rayman é um dos personagens mais icônicos da Ubisoft e está entre os mais conhecidos da história dos videogames. O jogo Rayman original foi o primeiro grande sucesso da Ubisoft, e a franquia tem um significado especial para a empresa. Ao longo das décadas, Rayman apareceu em mais de 40 jogos e mais de 20 plataformas diferentes, em uma série aclamada pela crítica por sua jogabilidade inovadora e realizações artísticas.
+                    Criado pela primeira vez na Ubisoft Montpellier em 1995, Rayman é um dos personagens mais icônicos
+                    da Ubisoft e está entre os mais conhecidos da história dos videogames. O jogo Rayman original foi o
+                    primeiro grande sucesso da Ubisoft, e a franquia tem um significado especial para a empresa. Ao
+                    longo das décadas, Rayman apareceu em mais de 40 jogos e mais de 20 plataformas diferentes, em uma
+                    série aclamada pela crítica por sua jogabilidade inovadora e realizações artísticas.
                 </p>
-                <a href="https://www.ubisoft.com/en-us/company/about-us/our-brands/rayman" target="_blank" class="fonte">FONTE: UBISOFT</a>
+                <a href="https://www.ubisoft.com/en-us/company/about-us/our-brands/rayman" target="_blank"
+                    class="fonte">FONTE: UBISOFT</a>
             </div>
         </section>
 
         <section id="franquias">
             <h1>Franquias:</h1>
-            <p>A Ubisoft é uma das maiores desenvolvedoras de jogos do mundo, com uma vasta gama de franquias que conquistaram
+            <p>A Ubisoft é uma das maiores desenvolvedoras de jogos do mundo, com uma vasta gama de franquias que
+                conquistaram
                 milhões de fãs. Desde a ação furtiva de Assassin's Creed até a adrenalina de Far Cry, cada série traz
-                experiências únicas e envolventes. A empresa também é conhecida por sua capacidade de inovar e expandir suas
-                franquias, como demonstrado em títulos como Watch Dogs e Just Dance, que continuam a evoluir com novas mecânicas
+                experiências únicas e envolventes. A empresa também é conhecida por sua capacidade de inovar e expandir
+                suas
+                franquias, como demonstrado em títulos como Watch Dogs e Just Dance, que continuam a evoluir com novas
+                mecânicas
                 e histórias cativantes.
             </p>
-            <a href="https://www.ubisoft.com/en-us/company/about-us/our-brands/assassin-s-creed-" target="_blank" class="fonte">FONTE: UBISOFT</a>
+            <a href="https://www.ubisoft.com/en-us/company/about-us/our-brands/assassin-s-creed-" target="_blank"
+                class="fonte">FONTE: UBISOFT</a>
             <div class="galeria container">
                 <figure style="background-image: url('img/Banner-da-franquia-Assassins-Creed.jpg');">
                     <figcaption>Assassin's Creed</figcaption>
@@ -181,16 +240,19 @@
                 <figure style="background-image: url('img/uno.avif');">
                     <figcaption>Uno</figcaption>
                 </figure>
-                <figure style="background-image: url('https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4dRcUyxWDkQYKyuypdreE9/95401c8b0010284843c1e50846246110/hsw-ubi-page_meta-thumb.jpg');">
+                <figure
+                    style="background-image: url('https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/4dRcUyxWDkQYKyuypdreE9/95401c8b0010284843c1e50846246110/hsw-ubi-page_meta-thumb.jpg');">
                     <figcaption>Hungry Shark</figcaption>
                 </figure>
-                <figure style="background-image: url('https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000021933/1c53ad2b39a5911e89fc48cadb879c81b6f959e9058d3d063404e8b29657d3ec');">
+                <figure
+                    style="background-image: url('https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000021933/1c53ad2b39a5911e89fc48cadb879c81b6f959e9058d3d063404e8b29657d3ec');">
                     <figcaption>Immortals Fenyx Rising</figcaption>
                 </figure>
                 <figure style="background-image: url('https://i.ytimg.com/vi/DMyYOKrsnbo/maxresdefault.jpg');">
                     <figcaption>Skull and Bones</figcaption>
                 </figure>
-                <figure style="background-image: url('https://cdn1.epicgames.com/offer/2bcf2fdc85594071846aa803926b8681/DUST_UCS24645_Store_Landscape_2560x1440_2560x1440-a22812056787ed0ae13500bd78eb62a6');">
+                <figure
+                    style="background-image: url('https://cdn1.epicgames.com/offer/2bcf2fdc85594071846aa803926b8681/DUST_UCS24645_Store_Landscape_2560x1440_2560x1440-a22812056787ed0ae13500bd78eb62a6');">
                     <figcaption>From Dust</figcaption>
                 </figure>
             </div>
@@ -277,76 +339,268 @@
             </div>
         </section>
 
-<!--
-| Franquia         | Nº de Jogos | Primeiro Lançamento | Último Jogo Lançado | Gênero Principal |
-| ---------------- | ----------- | ------------------- | ------------------- | ---------------- |
-| Assassin's Creed | 13+         | 2007                | 2024 (Mirage)       | Ação/Aventura    |
-| Far Cry          | 6+          | 2004                | 2021 (Far Cry 6)    | FPS              |
-| Just Dance       | 15+         | 2009                | 2024                | Música/Ritmo     |
-| Rainbow Six      | 10+         | 1998                | 2015 (Siege)        | Tático/FPS       |
--->     
-        
-     
-    <footer id="contato">Site desenvolvido por João Pedro</footer>
+        <footer id="contato">Site desenvolvido por João Pedro</footer>
 
-    <!-- Modais -->
-    <div class="card">
-        <div class="modal" id="modal1">
-            <div class="modal-content">
-                <h3>Origem do Nome</h3>
-                <p>O nome "Ubisoft" é uma junção das palavras "ubiquidade" e "software". A ideia era transmitir a visão da empresa de estar presente em todos os lugares com seus jogos, alcançando jogadores ao redor do mundo. Fundada em 1986 pelos irmãos Guillemot, a Ubisoft rapidamente se destacou no cenário internacional, tornando-se uma das maiores desenvolvedoras e publicadoras de jogos eletrônicos do planeta.</p>
-                <a href="https://ge.globo.com/esports/reportagem/2023/02/03/ubisoft-conheca-a-historia-e-jogos-da-desenvolvedora.ghtml" class="fonte" target="_blank">FONTE: GLOBO ESPORTE</a>
-                <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+        <!-- Modais -->
+        <div class="card">
+            <div class="modal" id="modal1">
+                <div class="modal-content">
+                    <h3>Origem do Nome</h3>
+                    <p>O nome "Ubisoft" é uma junção das palavras "ubiquidade" e "software". A ideia era transmitir a
+                        visão da empresa de estar presente em todos os lugares com seus jogos, alcançando jogadores ao
+                        redor do mundo. Fundada em 1986 pelos irmãos Guillemot, a Ubisoft rapidamente se destacou no
+                        cenário internacional, tornando-se uma das maiores desenvolvedoras e publicadoras de jogos
+                        eletrônicos do planeta.</p>
+                    <a href="https://ge.globo.com/esports/reportagem/2023/02/03/ubisoft-conheca-a-historia-e-jogos-da-desenvolvedora.ghtml"
+                        class="fonte" target="_blank">FONTE: GLOBO ESPORTE</a>
+                    <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div id="modal2" class="modal">
-            <div class="modal-content">
-            <h3>Primeiro Jogo</h3>
-            <p>O primeiro jogo publicado pela Ubisoft foi "Zombi", lançado em 1986. O título é um jogo de sobrevivência em primeira pessoa ambientado em um apocalipse zumbi, onde o jogador precisa explorar um shopping, coletar itens e sobreviver aos ataques dos mortos-vivos. "Zombi" marcou o início da trajetória da Ubisoft no mercado de games e foi relançado anos depois para novas plataformas.</p>
-            <a href="https://ge.globo.com/esports/reportagem/2023/02/03/ubisoft-conheca-a-historia-e-jogos-da-desenvolvedora.ghtml" class="fonte" target="_blank">FONTE: GLOBO ESPORTE</a>
-            <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+        <div class="card">
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <h3>Primeiro Jogo</h3>
+                    <p>O primeiro jogo publicado pela Ubisoft foi "Zombi", lançado em 1986. O título é um jogo de
+                        sobrevivência em primeira pessoa ambientado em um apocalipse zumbi, onde o jogador precisa
+                        explorar um shopping, coletar itens e sobreviver aos ataques dos mortos-vivos. "Zombi" marcou o
+                        início da trajetória da Ubisoft no mercado de games e foi relançado anos depois para novas
+                        plataformas.</p>
+                    <a href="https://ge.globo.com/esports/reportagem/2023/02/03/ubisoft-conheca-a-historia-e-jogos-da-desenvolvedora.ghtml"
+                        class="fonte" target="_blank">FONTE: GLOBO ESPORTE</a>
+                    <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div id="modal3" class="modal">
-            <div class="modal-content">
-                <h3>Assassin’s Creed e Notre Dame</h3>
-                <p>Quando o incêndio de Notre Dame ocorreu em 2019, muitos meios de comunicação, tanto especializados quanto generalistas, comentaram como o jogo da Ubisoft poderia ser uma peça-chave na reconstrução. Durante anos, a saga Assassin's Creed foi elogiada por sua fidelidade histórica, com seus jogos sendo meticulosamente documentados em grandes viagens no tempo.</p>
-                <p>Cinco anos depois, isso foi desmentido. Trata-se de um artigo investigativo da Polygon, que, complementando outro vídeo que fez sobre o assunto em 2021, analisa tudo o que a Ubisoft disse publicamente na época, incluindo a apresentação de seu apoio à catedral, mas sem que isso se traduzisse em qualquer ajuda prática que pudessem dar.</p>
-                <a href="https://br.ign.com/games/128933/news/em-2019-todos-acreditavamos-que-assassins-creed-unity-serviu-para-reconstruir-notre-dame-apos-seu-in" class="fonte" target="_blank">FONTE: IGN BRASIL</a>
-                <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+        <div class="card">
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <h3>Assassin’s Creed e Notre Dame</h3>
+                    <p>Quando o incêndio de Notre Dame ocorreu em 2019, muitos meios de comunicação, tanto
+                        especializados quanto generalistas, comentaram como o jogo da Ubisoft poderia ser uma peça-chave
+                        na reconstrução. Durante anos, a saga Assassin's Creed foi elogiada por sua fidelidade
+                        histórica, com seus jogos sendo meticulosamente documentados em grandes viagens no tempo.</p>
+                    <p>Cinco anos depois, isso foi desmentido. Trata-se de um artigo investigativo da Polygon, que,
+                        complementando outro vídeo que fez sobre o assunto em 2021, analisa tudo o que a Ubisoft disse
+                        publicamente na época, incluindo a apresentação de seu apoio à catedral, mas sem que isso se
+                        traduzisse em qualquer ajuda prática que pudessem dar.</p>
+                    <a href="https://br.ign.com/games/128933/news/em-2019-todos-acreditavamos-que-assassins-creed-unity-serviu-para-reconstruir-notre-dame-apos-seu-in"
+                        class="fonte" target="_blank">FONTE: IGN BRASIL</a>
+                    <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div id="modal4" class="modal">
-            <div class="modal-content">
-                <h3> Recorde de Just Dance</h3>
-                <p>A franquia "Just Dance" entrou para o Guinness World Records como o jogo de dança mais vendido de todos os tempos. Lançado em 2009, o jogo conquistou milhões de fãs ao redor do mundo, tornando-se presença garantida em festas e eventos. O sucesso da série se deve à sua jogabilidade acessível e à constante atualização do repertório musical.</p>
-                <a href="https://news.ubisoft.com/en-us/article/2Q9OdcAkMOXPHksiTvx08V/just-dance-celebrates-15th-anniversary#:~:text=2024%20marks%20the%2015,with%20more%20than%2090%20million" class="fonte" target="_blank">FONTE: UBISOFT</a>
-                <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+        <div class="card">
+            <div id="modal4" class="modal">
+                <div class="modal-content">
+                    <h3> Recorde de Just Dance</h3>
+                    <p>A franquia "Just Dance" entrou para o Guinness World Records como o jogo de dança mais vendido de
+                        todos os tempos. Lançado em 2009, o jogo conquistou milhões de fãs ao redor do mundo,
+                        tornando-se presença garantida em festas e eventos. O sucesso da série se deve à sua
+                        jogabilidade acessível e à constante atualização do repertório musical.</p>
+                    <a href="https://news.ubisoft.com/en-us/article/2Q9OdcAkMOXPHksiTvx08V/just-dance-celebrates-15th-anniversary#:~:text=2024%20marks%20the%2015,with%20more%20than%2090%20million"
+                        class="fonte" target="_blank">FONTE: UBISOFT</a>
+                    <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="card">
-        <div id="modal5" class="modal">
-            <div class="modal-content">
-                <h3>Expansão Global</h3>
-                <p>A Ubisoft possui estúdios em mais de 19 países, demonstrando sua presença global e diversidade cultural no desenvolvimento de jogos. Com equipes espalhadas por diferentes continentes, a empresa consegue criar experiências variadas e inovadoras, adaptando seus títulos para públicos de todo o mundo.
-        <br><br> Além disso, a Ubisoft investe constantemente em novas tecnologias e parcerias, colaborando com desenvolvedores independentes e grandes nomes da indústria. Essa estratégia permitiu o lançamento de franquias de sucesso como Assassin’s Creed, Far Cry, Just Dance, Watch Dogs, entre outras.
-        <br><br> A empresa também se destaca por seu compromisso com a inclusão e a diversidade, promovendo ambientes de trabalho colaborativos e incentivando a criatividade de seus funcionários. Com mais de 20 mil colaboradores, a Ubisoft segue expandindo seu portfólio e consolidando sua posição como uma das líderes do setor de entretenimento digital.
-        <br><br> A atuação global da Ubisoft não se limita apenas ao desenvolvimento de jogos. A empresa também investe em eSports, realidade virtual, experiências mobile e projetos educacionais, buscando sempre inovar e surpreender o público.
-        <br><br> Com uma trajetória marcada por desafios e conquistas, a Ubisoft continua a influenciar gerações de jogadores e a moldar o futuro dos videogames.</p>
-                <a href="https://www.ubisoft.com/en-us/company/about-us/our-story" target="_blank" class="fonte">FONTE: UBISOFT</a>
-                <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+        <div class="card">
+            <div id="modal5" class="modal">
+                <div class="modal-content">
+                    <h3>Expansão Global</h3>
+                    <p>A Ubisoft possui estúdios em mais de 19 países, demonstrando sua presença global e diversidade
+                        cultural no desenvolvimento de jogos. Com equipes espalhadas por diferentes continentes, a
+                        empresa consegue criar experiências variadas e inovadoras, adaptando seus títulos para públicos
+                        de todo o mundo.
+                        <br><br> Além disso, a Ubisoft investe constantemente em novas tecnologias e parcerias,
+                        colaborando com desenvolvedores independentes e grandes nomes da indústria. Essa estratégia
+                        permitiu o lançamento de franquias de sucesso como Assassin’s Creed, Far Cry, Just Dance, Watch
+                        Dogs, entre outras.
+                        <br><br> A empresa também se destaca por seu compromisso com a inclusão e a diversidade,
+                        promovendo ambientes de trabalho colaborativos e incentivando a criatividade de seus
+                        funcionários. Com mais de 20 mil colaboradores, a Ubisoft segue expandindo seu portfólio e
+                        consolidando sua posição como uma das líderes do setor de entretenimento digital.
+                        <br><br> A atuação global da Ubisoft não se limita apenas ao desenvolvimento de jogos. A empresa
+                        também investe em eSports, realidade virtual, experiências mobile e projetos educacionais,
+                        buscando sempre inovar e surpreender o público.
+                        <br><br> Com uma trajetória marcada por desafios e conquistas, a Ubisoft continua a influenciar
+                        gerações de jogadores e a moldar o futuro dos videogames.
+                    </p>
+                    <a href="https://www.ubisoft.com/en-us/company/about-us/our-story" target="_blank"
+                        class="fonte">FONTE: UBISOFT</a>
+                    <a href="#" onclick="history.back();" class="close-btn">Fechar</a>
+                </div>
             </div>
         </div>
-    </div>
-   
+        <!-- ... (modais unchanged) ... -->
 
-    
+        <script>
+            (function () {
+                const bannerSection = document.getElementById('inicio');
+                const container = document.getElementById('rayman-game-container');
+                const rayman = document.getElementById('rayman-game-rayman');
+                const lumensDiv = document.getElementById('rayman-game-lumens');
+                // Removido scoreDiv
+                // Imagem parada fornecida pelo usuário (Image 1)
+                const raymanIdle = 'assets/raymanparado.webp'; // coloque a imagem 1 como 'assets/rayman-parado.png'
+                const raymanRunning = 'assets/gifrayman.gif';
+                const raymanJump = 'assets/raymangifpulo.gif';
+                let sectionRect = bannerSection.getBoundingClientRect();
+                let raymanX = sectionRect.width / 2 - 45;
+                let raymanY = sectionRect.height - 90;
+                let velocityY = 0;
+                let gravity = 0.7;
+                let jumpStrength = -15;
+                let movingLeft = false;
+                let movingRight = false;
+                let isJumping = false;
+                let groundY = sectionRect.height - 90;
+
+                // Para o desafio dos lumens
+                let totalLumens = 5;
+                let lumensOnScreen = 0;
+
+                function spawnLumens(count) {
+                    lumensDiv.innerHTML = '';
+                    for (let i = 0; i < count; i++) {
+                        const l = document.createElement('img');
+                        l.src = 'assets/lumem.png.png';
+                        l.className = 'rayman-game-lumen';
+                        l.style.position = 'absolute';
+                        l.style.width = '50px';
+                        l.style.zIndex = 101;
+                        let lx = 80 + Math.random() * (sectionRect.width - 200);
+                        let ly = groundY - Math.random() * 200;
+                        l.style.left = lx + 'px';
+                        l.style.top = ly + 'px';
+                        lumensDiv.appendChild(l);
+                    }
+                    lumensOnScreen = count;
+                }
+
+                function updateRayman() {
+                    raymanX = Math.max(0, Math.min(sectionRect.width - 90, raymanX));
+                    raymanY = Math.max(0, Math.min(groundY, raymanY));
+                    rayman.style.left = raymanX + 'px';
+                    rayman.style.top = raymanY + 'px';
+                }
+
+                function checkCollisions() {
+                    const rRect = rayman.getBoundingClientRect();
+                    let collected = 0;
+                    lumensDiv.querySelectorAll('.rayman-game-lumen').forEach(lumen => {
+                        const lRect = lumen.getBoundingClientRect();
+                        if (!(rRect.right < lRect.left || rRect.left > lRect.right || rRect.bottom < lRect.top || rRect.top > lRect.bottom)) {
+                            lumen.remove();
+                            lumensOnScreen--;
+                            collected++;
+                        }
+                    });
+                    // Quando pegar todos os lumens, reaparece +1
+                    if (lumensOnScreen === 0 && collected > 0) {
+                        totalLumens = totalLumens + 2;
+                        setTimeout(() => spawnLumens(totalLumens), 400);
+                    }
+                }
+
+                // Movimento contínuo durante o pulo
+                let moveInterval = null;
+                let movementActive = false; // detecta se está se movendo
+
+                function startMove(dir) {
+                    stopMove();
+                    movementActive = true;
+                    rayman.src = raymanRunning;
+                    moveInterval = setInterval(() => {
+                        if (dir === 'left') {
+                            raymanX -= 7;
+                            rayman.style.transform = 'translateX(-50%) scaleX(-1)';
+                        }
+                        if (dir === 'right') {
+                            raymanX += 7;
+                            rayman.style.transform = 'translateX(-50%) scaleX(1)';
+                        }
+                        updateRayman();
+                        checkCollisions();
+                    }, 16);
+                }
+                function stopMove() {
+                    if (moveInterval) clearInterval(moveInterval);
+                    moveInterval = null;
+                    movementActive = false;
+                    if (!isJumping) rayman.src = raymanIdle; // fica parado se não estiver pulando
+                }
+                function jumpRayman() {
+                    if (!isJumping) {
+                        velocityY = jumpStrength;
+                        isJumping = true;
+                        rayman.src = raymanJump;
+                        let jumpInterval = setInterval(() => {
+                            raymanY += velocityY;
+                            velocityY += gravity;
+                            if (raymanY >= groundY) {
+                                raymanY = groundY;
+                                velocityY = 0;
+                                isJumping = false;
+                                // Se está parado, volta pro idle, senão pro running
+                                rayman.src = movementActive ? raymanRunning : raymanIdle;
+                                clearInterval(jumpInterval);
+                            }
+                            updateRayman();
+                            checkCollisions();
+                        }, 16);
+                    }
+                }
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'a') startMove('left');
+                    if (e.key === 'd') startMove('right');
+                    if (e.key === 'w') jumpRayman();
+                });
+                document.addEventListener('keyup', function (e) {
+                    if (e.key === 'a' || e.key === 'd') stopMove();
+                });
+
+                // Suporte ao controle Xbox (Gamepad API)
+                let lastGamepadState = { left: false, right: false, jump: false };
+                function pollGamepad() {
+                    const gamepads = navigator.getGamepads();
+                    let gp = null;
+                    for (let i = 0; i < gamepads.length; i++) {
+                        if (gamepads[i]) { gp = gamepads[i]; break; }
+                    }
+                    if (gp) {
+                        let axisX = gp.axes[0];
+                        let axisY = gp.axes[1];
+                        let left = axisX < -0.5;
+                        let right = axisX > 0.5;
+                        let jump = gp.buttons[0].pressed || axisY < -0.5;
+                        if (left && !lastGamepadState.left) startMove('left');
+                        if (right && !lastGamepadState.right) startMove('right');
+                        if (!left && lastGamepadState.left) stopMove();
+                        if (!right && lastGamepadState.right) stopMove();
+                        if (jump && !lastGamepadState.jump) jumpRayman();
+                        lastGamepadState = { left, right, jump };
+                    }
+                    requestAnimationFrame(pollGamepad);
+                }
+                window.addEventListener('gamepadconnected', pollGamepad);
+
+                // Ajusta ao redimensionar
+                window.addEventListener('resize', () => {
+                    sectionRect = bannerSection.getBoundingClientRect();
+                    groundY = sectionRect.height - 90;
+                    raymanY = Math.min(raymanY, groundY);
+                    spawnLumens(totalLumens);
+                    updateRayman();
+                });
+
+                // Começa parado com a imagem parada
+                rayman.src = raymanIdle;
+                spawnLumens(totalLumens);
+                updateRayman();
+            })();
+        </script>
 </body>
+
 </html>
