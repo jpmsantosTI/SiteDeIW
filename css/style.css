@@ -122,7 +122,7 @@ section {
 }
 main section{
     border-bottom: #07166d solid 0.6em;
-    z-index: 20;
+    z-index: 20 !important;
 }
 #sobre{
     padding-left: 1em;
@@ -714,3 +714,4 @@ th{
     text-align: center;
     margin: 0 auto;
   }
+
