@@ -122,7 +122,7 @@ section {
 }
 main section{
     border-bottom: #07166d solid 0.6em;
-    z-index: 20 !important;
+    z-index: 20;
 }
 #sobre{
     padding-left: 1em;
@@ -281,7 +281,10 @@ main section{
         max-height: 70dvh;
         margin-top: 10em;
     } 
-
+    #rayman-game-container *{
+        display: none !important;
+        visibility: hidden !important;
+    }
 }
 /*Fonte boldonse*/
 h1, .boldonse{
@@ -714,4 +717,3 @@ th{
     text-align: center;
     margin: 0 auto;
   }
-
