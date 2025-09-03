@@ -226,9 +226,6 @@ main section{
         height: 50vh !important;
         margin-top: 6em !important;
     }
-    .banner::after {
-        height: 50% !important;
-    }
 }
 
 
@@ -716,4 +713,5 @@ th{
     justify-content: center;
     text-align: center;
     margin: 0 auto;
+
   }
