@@ -205,16 +205,11 @@ main section{
         margin-top: 11em;
         height: 28vw !important;
     }
-    .banner::after {
-        height: 30vw;
-    }
 }
 @media (max-width: 500px) {
     .banner {
         margin-top: 9.5em;
-    }
-    .banner::after {
-        height: 39vw;
+        height: 39vw !important;
     }
 }
 /*---------------------------------*/
@@ -712,7 +707,4 @@ th{
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-
   }
-
-
