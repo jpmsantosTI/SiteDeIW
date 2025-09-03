@@ -212,7 +212,6 @@ main section{
 @media (max-width: 500px) {
     .banner {
         margin-top: 9.5em;
-        height: 39vw !important;
     }
     .banner::after {
         height: 39vw;
@@ -715,4 +714,5 @@ th{
     margin: 0 auto;
 
   }
+
 
