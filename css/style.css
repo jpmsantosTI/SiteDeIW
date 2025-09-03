@@ -108,7 +108,7 @@ nav a:active {
     content: '';
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     z-index: 1;
     background: rgba(0, 0, 0, 0.468);
     box-shadow: #413d3d 0px 0px 5px;
@@ -715,3 +715,4 @@ th{
     margin: 0 auto;
 
   }
+
