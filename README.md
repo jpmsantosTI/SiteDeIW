@@ -1,4 +1,4 @@
 # SiteDeIW
-Primeiro site grande feito para um trabalho da escola sobre o tema escolhido pelo aluno (Ubisoft)
+Primeiro site grande feito para um trabalho de escola da matéria Interfaces Web 1 sobre o tema escolhido pelo aluno (Ubisoft)
 # Site Ubisoft
-[https://jpmsantosti.github.io/SiteIW](https://jpmsantos81.github.io/SiteDeIW/)
+[https://jpmsantos81.github.io/SiteIW_Ubisoft/](https://jpmsantos81.github.io/SiteDeIW_Ubisoft/)
